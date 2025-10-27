@@ -34,4 +34,4 @@ To push the published webpage to the `gh-pages` branch on GitHub, do
 asv gh-pages --rewrite
 ```
 
-You can now view the latest [benchmarking page](https://jaxionproject.github.io/jaxion-benchmarks/).
+You can now view the up-to-date [benchmarking page](https://jaxionproject.github.io/jaxion-benchmarks/).

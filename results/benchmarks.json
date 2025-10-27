@@ -1,0 +1,99 @@
+{
+    "benchmarks.DarkMatterBenchmarks.peakmem_simulation": {
+        "code": "class DarkMatterBenchmarks:\n    def peakmem_simulation(self):\n        self.sim.run()\n\n    def setup(self):\n        params = {\"output\": {\"save\": False}, \"time\": {\"end\": 0.1}}\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j",
+        "name": "benchmarks.DarkMatterBenchmarks.peakmem_simulation",
+        "param_names": [],
+        "params": [],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "8e0dadd6b48b48c81d356ec21fb79c3a95129f35e2f7853bbfa036b48a3cf189"
+    },
+    "benchmarks.DarkMatterBenchmarks.peakmem_simulation_with_save": {
+        "code": "class DarkMatterBenchmarks:\n    def peakmem_simulation_with_save(self):\n        self.sim.params[\"output\"][\"save\"] = True\n        self.sim.run()\n\n    def setup(self):\n        params = {\"output\": {\"save\": False}, \"time\": {\"end\": 0.1}}\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j",
+        "name": "benchmarks.DarkMatterBenchmarks.peakmem_simulation_with_save",
+        "param_names": [],
+        "params": [],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "b0a970d8b8bbdb3f6fa1df1496ab26ff4659d470c2aeccaa6b618b528c167921"
+    },
+    "benchmarks.DarkMatterBenchmarks.time_simulation": {
+        "code": "class DarkMatterBenchmarks:\n    def time_simulation(self):\n        self.sim.run()\n\n    def setup(self):\n        params = {\"output\": {\"save\": False}, \"time\": {\"end\": 0.1}}\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j",
+        "min_run_count": 2,
+        "name": "benchmarks.DarkMatterBenchmarks.time_simulation",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "83e2dbcffe2c6d78444be79a5dfc8f5733b9167978e0dadc4953ac2837b17bcb",
+        "warmup_time": -1
+    },
+    "benchmarks.DarkMatterBenchmarks.time_simulation_with_save": {
+        "code": "class DarkMatterBenchmarks:\n    def time_simulation_with_save(self):\n        self.sim.params[\"output\"][\"save\"] = True\n        self.sim.run()\n\n    def setup(self):\n        params = {\"output\": {\"save\": False}, \"time\": {\"end\": 0.1}}\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j",
+        "min_run_count": 2,
+        "name": "benchmarks.DarkMatterBenchmarks.time_simulation_with_save",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "948acc891d0c0a715764402eff5aa90db2b6942f0faf41ee9f3cb9df6dbf9b83",
+        "warmup_time": -1
+    },
+    "benchmarks.DarkMatterGasBenchmarks.peakmem_simulation": {
+        "code": "class DarkMatterGasBenchmarks:\n    def peakmem_simulation(self):\n        self.sim.run()\n\n    def setup(self):\n        params = {\n            \"physics\": {\"hydro\": True},\n            \"time\": {\"end\": 0.1},\n            \"output\": {\"save\": False},\n        }\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j\n        self.sim.state[\"rho\"] = jnp.ones_like(xx)",
+        "name": "benchmarks.DarkMatterGasBenchmarks.peakmem_simulation",
+        "param_names": [],
+        "params": [],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "ccfebbbe9228f77961cfee2e39a7fd7491cd0be5b94fe9aa7b15acac3e828689"
+    },
+    "benchmarks.DarkMatterGasBenchmarks.time_simulation": {
+        "code": "class DarkMatterGasBenchmarks:\n    def time_simulation(self):\n        self.sim.run()\n\n    def setup(self):\n        params = {\n            \"physics\": {\"hydro\": True},\n            \"time\": {\"end\": 0.1},\n            \"output\": {\"save\": False},\n        }\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j\n        self.sim.state[\"rho\"] = jnp.ones_like(xx)",
+        "min_run_count": 2,
+        "name": "benchmarks.DarkMatterGasBenchmarks.time_simulation",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "704d53d8c8c6cb63858f7308ab302ee6592e6456537309d6b52bbcbeea5beb71",
+        "warmup_time": -1
+    },
+    "benchmarks.DarkMatterStarsBenchmarks.peakmem_simulation": {
+        "code": "class DarkMatterStarsBenchmarks:\n    def peakmem_simulation(self):\n        self.sim.run()\n\n    def setup(self):\n        params = {\n            \"physics\": {\"particles\": True},\n            \"time\": {\"end\": 0.1},\n            \"output\": {\"save\": False},\n            \"particles\": {\"num_particles\": 1000},\n        }\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j\n        self.sim.state[\"rho\"] = jnp.ones_like(xx)\n        s_lin = jnp.linspace(0.01, self.sim.box_size - 0.01, 10)\n        xx, yy, zz = jnp.meshgrid(s_lin, s_lin, s_lin, indexing=\"ij\")\n        self.sim.state[\"pos\"] = jnp.stack(\n            [xx.flatten(), yy.flatten(), zz.flatten()], axis=-1\n        )\n        self.sim.state[\"vel\"] = jnp.zeros((self.sim.num_particles, 3))",
+        "name": "benchmarks.DarkMatterStarsBenchmarks.peakmem_simulation",
+        "param_names": [],
+        "params": [],
+        "type": "peakmemory",
+        "unit": "bytes",
+        "version": "7e94e0111cd483f96af670236bada1a3aab3e253fa17fe0f0a1e98394ead5ed8"
+    },
+    "benchmarks.DarkMatterStarsBenchmarks.time_simulation": {
+        "code": "class DarkMatterStarsBenchmarks:\n    def time_simulation(self):\n        self.sim.run()\n\n    def setup(self):\n        params = {\n            \"physics\": {\"particles\": True},\n            \"time\": {\"end\": 0.1},\n            \"output\": {\"save\": False},\n            \"particles\": {\"num_particles\": 1000},\n        }\n        self.sim = jaxion.Simulation(params)\n        fac = 2.0 * jnp.pi / 10.0\n        xx, yy, _ = self.sim.grid\n        self.sim.state[\"psi\"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j\n        self.sim.state[\"rho\"] = jnp.ones_like(xx)\n        s_lin = jnp.linspace(0.01, self.sim.box_size - 0.01, 10)\n        xx, yy, zz = jnp.meshgrid(s_lin, s_lin, s_lin, indexing=\"ij\")\n        self.sim.state[\"pos\"] = jnp.stack(\n            [xx.flatten(), yy.flatten(), zz.flatten()], axis=-1\n        )\n        self.sim.state[\"vel\"] = jnp.zeros((self.sim.num_particles, 3))",
+        "min_run_count": 2,
+        "name": "benchmarks.DarkMatterStarsBenchmarks.time_simulation",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "82efd511fac19a06126b2e4b5b921672cf572198bf158d075abd1f5646713e68",
+        "warmup_time": -1
+    },
+    "version": 2
+}
