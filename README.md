@@ -1,6 +1,6 @@
 # jaxion benchmarks
 
-Benchmarking jaxion with [Airspeed Velocity](https://asv.readthedocs.io/)
+Benchmarking [jaxion](https://github.com/JaxionProject/jaxion) with [Airspeed Velocity](https://asv.readthedocs.io/)
 
 For now, test and upload manually. In this folder, do a:
 

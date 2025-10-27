@@ -73,8 +73,8 @@ class DarkMatterStarsBenchmarks:
         xx, yy, _ = self.sim.grid
         self.sim.state["psi"] = jnp.sin(fac * xx) * jnp.cos(fac * yy) + 0.0j
         self.sim.state["rho"] = jnp.ones_like(xx)
-        slin = jnp.linspace(0.01, self.sim.box_size - 0.01, 10)
-        xx, yy, zz = jnp.meshgrid(slin, slin, slin, indexing="ij")
+        s_lin = jnp.linspace(0.01, self.sim.box_size - 0.01, 10)
+        xx, yy, zz = jnp.meshgrid(s_lin, s_lin, s_lin, indexing="ij")
         self.sim.state["pos"] = jnp.stack(
             [xx.flatten(), yy.flatten(), zz.flatten()], axis=-1
         )
