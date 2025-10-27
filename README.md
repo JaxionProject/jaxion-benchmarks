@@ -1,11 +1,11 @@
 # jaxion benchmarks
 
-Benchmarking [jaxion](https://github.com/JaxionProject/jaxion) with [Airspeed Velocity](https://asv.readthedocs.io/)
+Benchmarking [jaxion](https://github.com/JaxionProject/jaxion) with [airspeed velocity](https://asv.readthedocs.io/)
 
-For now, test and upload manually. In this folder, do a:
+For now, test and upload manually. In this repo folder, do a:
 
 ```console
-asv run
+asv run --skip-existing-commits ALL
 ```
 
 To create a website collating the results, do:
@@ -20,8 +20,18 @@ To view it, do:
 asv preview
 ```
 
-To push the results to the `gh-pages` and push them to GitHub, do
+To add the test results to the repo, do a:
+
+```console
+git add results/
+git commit -m 'adding latest results'
+git push
+```
+
+To push the published webpage to the `gh-pages` branch on GitHub, do
 
 ```console
 asv gh-pages --rewrite
 ```
+
+You can now view the latest [benchmarking page](https://jaxionproject.github.io/jaxion-benchmarks/).
