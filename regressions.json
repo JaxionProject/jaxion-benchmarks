@@ -1,0 +1,1 @@
+{"regressions": [["benchmarks.DarkMatterGasBenchmarks.time_simulation", "graphs/arch-arm64/branch-main/cpu-Apple M3 Max/machine-C916PXT6XW/num_cpu-16/os-Darwin 24.1.0/python-3.12/ram-68719476736/benchmarks.DarkMatterGasBenchmarks.time_simulation.json", {}, null, 2.2818234584847232, 2.0388103125005728, [[null, 63, 2.0388103125005728, 2.2818234584847232]]]]}
